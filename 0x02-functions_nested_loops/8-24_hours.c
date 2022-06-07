@@ -10,7 +10,7 @@ void jack_bauer(void)
 
 {
 	int hours_tens, hours_ones, minutes_tens, minutes_ones, hours_max;
-	
+
 	hours_max = 58;
 	hours_tens = '0';
 	while (hours_tens < '3')
@@ -35,7 +35,6 @@ void jack_bauer(void)
 					_putchar(minutes_ones);
 					_putchar('\n');
 					minutes_ones++;
-		  
 				}
 				minutes_ones = '0';
 				minutes_tens++;
