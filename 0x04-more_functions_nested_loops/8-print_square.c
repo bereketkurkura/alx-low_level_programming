@@ -7,7 +7,6 @@
  */
 
 void print_square(int size)
-
 {
 	int col, row;
 
