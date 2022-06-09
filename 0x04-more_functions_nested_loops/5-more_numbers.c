@@ -1,31 +1,26 @@
 #include "main.h"
 
 /**
- * print_diagonal - function that draws a diagonal line on the terminal.
- * @n: input value to check
- * Return: nothing.
- */
+ *
+ *  * more_numbers -  function that prints 10 times the numbers, from 0 to 14.
+ *
+ *   * Return: nothing.
+ *
+ *    */
 
-void print_diagonal(int n)
+void more_numbers(void)
 
 {
-	int i = 0;
-	int j = 0;
-
-	while (i < n)
+	int x, y;
+		
+	for (x = 0; x < 10; x++)
 	{
-		while (j <= i)
+		for (y = 0; y <= 14; y++)
 		{
-			if (j != i)
-				_putchar(' ');
-			else
-				_putchar(92);
-			j += 1;
+			if (y > 9)
+				_putchar((y / 10) + '0');
+			_putchar((y % 10) + '0');
 		}
 		_putchar('\n');
-		i += 1;
-		j = 0;
 	}
-	if (n <= 0)
-	_putchar('\n');
 }
