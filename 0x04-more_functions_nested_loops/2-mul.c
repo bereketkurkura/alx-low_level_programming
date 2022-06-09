@@ -1,19 +1,14 @@
 #include "main.h"
 
 /**
- * print_numbers - function that prints the numbers, from 0 to 9.
- * Return: nothing.
+ * mul - function that multiplies two integers.
+ * @a: first input value to check
+ * @b: Sec input value to check
+ * Return: in
  */
 
-void print_numbers(void)
+int mul(int a, int b)
 
 {
-	int n = 0;
-
-	while (n < 10)
-	{
-		_putchar(n + '0');
-		n += 1;
-	}
-	_putchar('\n');
+	return (a * b);
 }
