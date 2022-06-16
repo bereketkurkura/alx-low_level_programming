@@ -21,7 +21,7 @@ void print_buffer(char *b, int size)
 		{
 			if ((index + byte) >= size)
 				printf("  ");
-													else
+			else
 				printf("%02x", *(b + index + byte));
 			if ((index % 2) != 0 && index != 0)
 				printf(" ");
@@ -38,7 +38,6 @@ void print_buffer(char *b, int size)
 		}
 		if (byte >= size)
 		continue;
-		
 		printf("\n");
 	}
 	if (size <= 0)
