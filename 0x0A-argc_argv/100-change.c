@@ -1,70 +1,57 @@
-#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <stdbool.h>
 
-/**
- * coinConverter - Helper function that does all the mathematics
- * @i: Passed in variable from main for calculations
- * Return: The number of coins needed minimum for the passed in variable
- */
+ /**
+  * main - A proogram that prints the minimum number of coins to
+  * make change for an amount of money
+  * @argc: The arguements' counter
+  * @argv: The argument's values
+  * Return: 1 if the number of arguments passed is not exactly
+  * or 0 in otherwise
+  */
 
-int coinConverter(int i)
-
-{
-	int count = 0;
-
-	while (i != 0)
-	{
-		if (i % 10 == 9 || i % 10 == 7)
-			i -= 2;
-		else if (i % 25 == 0)
-			i -= 25;
-		else if (i % 10 == 0)
-			i -= 10;
-		else if (i % 5 == 0)
-			i -= 5;
-		else if (i % 2 == 0)
-		{
-			if (i % 10 == 6)
-				i -= 1;
-			else
-				i -= 2;
-		}
-		else
-			i -= 1;
-		count++;
-	}
-	return (count);
-}
-
-/**
- * main - Takes in exactly one argument for minimum coin count
- * @argc: Number of command line arguments
- * @argv: Array name
- * Return: 0 if exactly 1 argument is passed into this program, 1 otherwise
- */
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 
 {
-	int i, coin;
+	int amount, coins = 0;
 
-	coin = 0;
-	if (argc != 2)
+	if (argc == 2)
 	{
-		printf("Error\n");
-		return (1);
+		amount = atoi(argv[1]);
+	if (amount < 0)
+	{  
+		printf("%d\n", 0);
+		return (0);
 	}
-
-	i = atoi(argv[1]);
-	if (i < 0)
-		printf("0\n");
+	if (amount % 25 >= 0)
+	{
+		coins += amount / 25;
+		amount = amount % 25;
+	}
+	if (amount % 10 >= 0)
+	{
+		coins += amount / 10;
+		amount = amount % 10;
+	}
+	if (amount % 5 >= 0)
+	{
+		coins += amount / 5;
+		amount = amount % 5;
+	}
+	if (amount % 2 >= 0)
+	{  
+		coins += amount / 2;
+		amount = amount % 2;
+	}
+	if (amount % 1 >= 0)
+		coins += amount;
+		printf("%d\n", coins);
+		return (0);
+	}
 	else
 	{
-		coin = coinConverter(i);
-		printf("%d\n", coin);
+	printf("Error\n");
+	return (1);
 	}
-	return (0);
 }
