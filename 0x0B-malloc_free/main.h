@@ -1,56 +1,15 @@
-#ifndef MAIN_H
-#define MAIN_H
-
-#include <stdio.h>
-#include <stdlib.h>
-
 int _putchar(char c);
-int _islower(int c);
-int _isalpha(int c);
-int _abs(int n);
 
-int _isupper(int c);
+char *create_array(unsigned int size, char c);
 
-int _isdigit(int c);
+char *_strdup(char *str);
 
-int _strlen(char *s);
+char *str_concat(char *s1, char *s2);
 
-void _puts(char *s);
+int **alloc_grid(int width, int height);
 
-char *_strcpy(char *dest, char *src);
+void free_grid(int **grid, int height);
 
-int _atoi(char *s);
+char *argstostr(int ac, char **av);
 
-char *_strcat(char *dest, char *src);
-
-char *_strncat(char *dest, char *src, int n);
-
-char *_strncpy(char *dest, char *src, int n);
-
-int _strcmp(char *s1, char *s2);
-
-char *_memset(char *s, char b, unsigned int n);
-
-char *_memcpy(char *dest, char *src, unsigned int n);
-
-char *_strchr(char *s, char c);
-
-unsigned int _strspn(char *s, char *accept);
-
-char *_strpbrk(char *s, char *accept);
-
-char *_strstr(char *haystack, char *needle);
-
-int add(int a, int b);
-
-int sub(int a, int b);
-
-int mul(int a, int b);
-
-int mod(int a, int b);
-
-extern div_t div(int __numer, int __denom);
-
-
-
-#endif /* MAIN_H */
+char **strtow(char *str);
