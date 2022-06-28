@@ -50,28 +50,28 @@ char **strtow(char *str)
 	i = 0;
 	while (str[i])
 	{
-	if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
-	{
-		for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
-		j++;
-		w[wc] = (char *)malloc(j * sizeof(char));
-		j--;
-		if (w[wc] == NULL)
+		if (str[i] != ' ' && (i == 0 || str[i - 1] == ' '))
 		{
-			for (k = 0; k < wc; k++)
-				free(w[k]);
-			free(w[n - 1]);
-			free(w);
-			return (NULL);
+			for (j = 1; str[i + j] != ' ' && str[i + j]; j++)
+			j++;
+			w[wc] = (char *)malloc(j * sizeof(char));
+			j--;
+			if (w[wc] == NULL)
+			{
+				for (k = 0; k < wc; k++)
+					free(w[k]);
+				free(w[n - 1]);
+				free(w);
+				return (NULL);
+			}
+			for (l = 0; l < j; l++)
+				w[wc][l] = str[i + l];
+			w[wc][l] = '\0';
+			wc++;
+			i += j;
 		}
-		for (l = 0; l < j; l++)
-			w[wc][l] = str[i + l];
-		w[wc][l] = '\0';
-		wc++;
-		i += j;
-	}
-	else
-		i++;
+		else
+			i++;
 	}
 	return (w);
 }
