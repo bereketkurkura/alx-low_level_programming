@@ -6,9 +6,7 @@
  * @h: pointer t  head of list
  * Return: number of nodes in list as size_t
  */
-
 size_t print_list(const list_t *h)
-
 {
 	unsigned int nodes = 0;
 
@@ -19,6 +17,7 @@ size_t print_list(const list_t *h)
 			printf("(nil)\n");
 		else
 			printf("%s\n", h->str);
+
 		h = h->next;
 		nodes++;
 	}
