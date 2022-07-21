@@ -6,9 +6,7 @@
  * @b: A pointer to binary string
  * Return: unsigned integer converted number
  */
-
 unsigned int binary_to_uint(const char *b)
-
 {
 	unsigned int base = 1, result = 0, len = 0;
 
@@ -28,6 +26,5 @@ unsigned int binary_to_uint(const char *b)
 		base *= 2;
 		len--;
 	}
-
 	return (result);
 }
