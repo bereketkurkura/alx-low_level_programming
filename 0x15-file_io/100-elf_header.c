@@ -24,7 +24,6 @@ void close_elf(int elf);
  */
 
 void check_elf(unsigned char *e_ident)
-
 {
 	int index;
 
@@ -97,7 +96,6 @@ void print_class(unsigned char *e_ident)
  */
 
 void print_data(unsigned char *e_ident)
-
 {
 	printf("  Data:                              ");
 
@@ -148,7 +146,6 @@ void print_osabi(unsigned char *e_ident)
 
 {
 	printf("  OS/ABI:                            ");
-
 	switch (e_ident[EI_OSABI])
 	{
 		case ELFOSABI_NONE:
@@ -211,7 +208,6 @@ void print_type(unsigned int e_type, unsigned char *e_ident)
 		e_type >>= 8;
 
 	printf("  Type:                              ");
-
 	switch (e_type)
 	{
 		case ET_NONE:
